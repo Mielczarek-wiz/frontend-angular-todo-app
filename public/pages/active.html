@@ -1,0 +1,24 @@
+<div class="container">
+
+    <!-- HEADER AND TODO COUNT -->
+    <div class="jumbotron text-center">
+        <h1>nodeTODO {{ cos }} <span class="label label-info">{{ todos.length }}</span></h1>
+    </div>
+    <!-- TODO LIST -->
+    <div id="todo-list" class="row">
+                    <div class="col-sm-4 col-sm-offset-4">
+
+                            <!-- LOOP OVER THE TODOS IN $scope.todos -->
+                            <div class="checkbox" ng-repeat="todo in todos">
+                                    <label>
+                                            <input type="checkbox" ng-click="updateTodo(todo._id, todo.done)"
+                                                   ng-model="todo.done">
+                                                   <span ng-class="{'crossed-out': todo.done}">{{ todo.text }}</span>
+                                    </label>
+                                    <i class="bi bi-trash text-danger pull-right" ng-click="deleteTodo(todo._id)"></i>
+                            </div>
+
+                    </div>
+            </div>
+
+</div>

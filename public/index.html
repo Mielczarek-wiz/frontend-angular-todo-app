@@ -1,0 +1,61 @@
+<!doctype html>
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="nodeTodo">
+<head>
+        <!-- META -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+        <title>Node/Angular Todo App</title>
+
+        <link rel="stylesheet" href="./css/main.css" >
+
+        <!-- SCROLLS -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+        <!-- ICONS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
+        <!-- load bootstrap -->
+        <style>
+                html {
+                        overflow-y: scroll;
+                }
+
+                body {
+                        padding-top: 50px;
+                }
+
+                #todo-list {
+                        margin-bottom: 30px;
+                }
+
+                #todo-form {
+                        margin-bottom: 50px;
+                }
+        </style>
+
+        <!-- SPELLS -->
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+        <!-- load angular -->
+        <script src="../js/core.js"></script>
+        <script src="../js/mainController.js"></script>
+        <script src="../js/doneController.js"></script>
+        <script src="../js/activeController.js"></script>
+
+</head>
+
+
+<body>
+        <nav class="navbar navbar-fixed-top">
+                <ul class="nav nav-tabs" style="background-color: #eee">
+                  <li class="nav-item" ng-class="{active: active_tab == 1}" ng-click="active_tab = 1"><a class="nav-link" href="#/">Main</a></li>
+                  <li class="nav-item" ng-class="{active: active_tab == 2}" ng-click="active_tab = 2"><a class="nav-link" href="#/done">Done</a></li>
+                  <li class="nav-item" ng-class="{active: active_tab == 3}" ng-click="active_tab = 3"><a class="nav-link" href="#/active">Active</a></li>
+                </ul>
+        </nav>
+        <div ng-view></div>
+        
+</body>
+
+
+
+</html>

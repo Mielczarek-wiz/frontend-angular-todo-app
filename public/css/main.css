@@ -1,0 +1,14 @@
+.crossed-out {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.nav-tabs {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .nav-tabs li {
+    flex: 1;
+    text-align: center;
+  }
