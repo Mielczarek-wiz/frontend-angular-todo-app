@@ -5,3 +5,5 @@ The main goal was to add to given application a few functionalities like:
   - update function when the checkbox is checked, 
   - add pages (tabs) which split todo list into two lists with done and not done tasks,
   - add some CSS.
+
+Before run this application use function ```npm install```.
