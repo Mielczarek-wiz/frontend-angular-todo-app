@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Simple todo application.",
   "main": "server.js",
-  "author": "Marcin Borowski",
+  "author": "Damian Mielczarek",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
