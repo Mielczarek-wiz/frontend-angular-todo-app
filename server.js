@@ -80,15 +80,18 @@ app.post("/api/todos", function (req, res) {
   );
 });
 
-// app.put("/api/todos", function (req, res) {});
+// update the task and send back all todos
 app.patch("/api/todos/:todo_id", function (req, res) {
 
+  // update a todo, information comes from AJAX request from Angular
   Todo.findOneAndUpdate(
     { _id: req.params.todo_id },
     { $set:{done: req.body.done} },
     { new: true },
     function (err, todo) {
       if (err) res.send(err);
+
+      // get and return all the todos after you create another
       Todo.find(function (err, todos) {
         if (err) res.send(err);
         res.json(todos);
@@ -100,6 +103,7 @@ app.patch("/api/todos/:todo_id", function (req, res) {
 
 // delete a todo
 app.delete("/api/todos/:todo_id", function (req, res) {
+  // delete a todo, information comes from AJAX request from Angular
   Todo.deleteOne(
     {
       _id: req.params.todo_id,

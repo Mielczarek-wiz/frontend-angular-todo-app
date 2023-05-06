@@ -12,8 +12,23 @@ nodeTodo.controller('doneController', function ($scope, $http) {
       .error(function(data) {
         console.log("Error: " + data);
       });
-      
-  // update a todo after checking it
+  
+  // when submitting the add form, send the text to the node API
+  $scope.createTodo = function() {
+    if (Object.keys($scope.formData).length !== 0){
+      $http
+      .post("/api/todos", $scope.formData)
+      .success(function(data) {
+        document.getElementById("newTodo").value = "";
+        $scope.todos = data.filter((todo) => todo.done === true);
+      })
+      .error(function(data) {
+        console.log("Error: " + data);
+      });
+    }
+  };
+
+  // update a todo after checking it, send the data to the node API
   $scope.updateTodo = function(id, done) {
 
     $http({ method: 'PATCH', url: "/api/todos/" + id, data: JSON.stringify({done: done}), headers: {'Content-Type': 'application/json'}})
@@ -26,7 +41,7 @@ nodeTodo.controller('doneController', function ($scope, $http) {
 
   };
 
-  // delete a todo after checking it
+  // delete a todo after checking it, send the data to the node API
   $scope.deleteTodo = function(id) {
     $http
       .delete("/api/todos/" + id)

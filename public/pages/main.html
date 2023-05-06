@@ -7,6 +7,10 @@
                     <h1>nodeTODO {{ cos }} <span class="label label-info">{{ todos.length }}</span></h1>
             </div>
 
+            <!-- SHOWING WHEN NO ELEMENTS IS IN todos -->
+            <div class="text-center" ng-show="!todos.length">
+                No elements to display.
+            </div>
             <!-- TODO LIST -->
             <div id="todo-list" class="row">
                     <div class="col-sm-4 col-sm-offset-4">
@@ -16,8 +20,10 @@
                                     <label>
                                             <input type="checkbox" ng-click="updateTodo(todo._id, todo.done)"
                                                    ng-model="todo.done">
+                                                   <!-- IF THE TASK IS DONE CROSS IT OUT-->
                                                    <span ng-class="{'crossed-out': todo.done}">{{ todo.text }}</span>
                                     </label>
+                                    <!-- ICON FOR DELETING THE TASK -->
                                     <i class="bi bi-trash text-danger pull-right" ng-click="deleteTodo(todo._id)"></i>
                             </div>
 
@@ -32,7 +38,7 @@
 
                                             <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
                                             <input id="newTodo" type="text" class="form-control input-lg text-center"
-                                                   placeholder="co jeszcze chcesz zrobić?" ng-model="formData.text">
+                                                   placeholder="co jeszcze chcesz zrobić?" required="true" ng-model="formData.text">
                                     </div>
 
                                     <!-- createToDo() WILL CREATE NEW TODOS -->
@@ -42,6 +48,7 @@
                     </div>
             </div>
 
+            <!-- FORM TO CHANGE NAME IN THE "HEADER" -->
             <div id="todo-form" class="row">
                     <div class="col-sm-8 col-sm-offset-2 text-center">
                             <input type="text" class="form-control" ng-model="cos">

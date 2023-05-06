@@ -1,13 +1,15 @@
+/* Crossing out the done task */
 .crossed-out {
     text-decoration: line-through;
     color: gray;
 }
 
+/* Tabs item text aligned to center */
 .nav-tabs {
     display: flex;
     justify-content: center;
   }
-  
+  /* Tabs item text aligned to center and full-filled at the top */
   .nav-tabs li {
     flex: 1;
     text-align: center;

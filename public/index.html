@@ -45,9 +45,10 @@
 
 
 <body>
+        <!-- Navbar with tab and class which make the tab active -->
         <nav class="navbar navbar-fixed-top">
                 <ul class="nav nav-tabs" style="background-color: #eee">
-                  <li class="nav-item" ng-class="{active: active_tab == 1}" ng-click="active_tab = 1"><a class="nav-link" href="#/">Main</a></li>
+                  <li class="nav-item" ng-class="{active: active_tab == 1}" ng-click="active_tab = 1"><a class="nav-link" href="#/">All</a></li>
                   <li class="nav-item" ng-class="{active: active_tab == 2}" ng-click="active_tab = 2"><a class="nav-link" href="#/done">Done</a></li>
                   <li class="nav-item" ng-class="{active: active_tab == 3}" ng-click="active_tab = 3"><a class="nav-link" href="#/active">Active</a></li>
                 </ul>
@@ -55,7 +56,4 @@
         <div ng-view></div>
         
 </body>
-
-
-
 </html>
